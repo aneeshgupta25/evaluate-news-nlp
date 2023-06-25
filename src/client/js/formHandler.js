@@ -9,20 +9,21 @@ function handleSubmit(event) {
     Client.checkForName(formText)
 
     console.log("::: Form Submitted :::")    
-    Client.getData({
-        text: "I am Aneesh & am a good boy!!!",
-        language: "en"
-    })    
-    .then(
-        function(data) {            
-            document.getElementById('results').innerHTML = data.subjectivity;
-        }
-    )
-    // fetch('http://localhost:3000/test')
-    // .then(res => res.json())
-    // .then(function(res) {
-    //     document.getElementById('results').innerHTML = res.message
-    // })
+    // Client.getData({
+    //     text: "I am Aneesh & am a good boy!!!",
+    //     language: "en"
+    // })    
+    // .then(
+    //     function(data) {            
+    //         document.getElementById('results').innerHTML = data.subjectivity;
+    //     }
+    // )    
+    fetch(`http://localhost:3000/test?t=${"hello"}&l=${"en"}`)    
+    .then(res => res.json())
+    .then(function(res) {
+        console.log(res);
+        document.getElementById('results').innerHTML = res.subjectivity
+    })
 }
 
 const getData = async (data) => {    
