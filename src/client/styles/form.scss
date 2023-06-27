@@ -4,10 +4,57 @@ form {
     padding: 40px;
   }
   
-  input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
-  }
+input {
+  padding: 5px 20px;
+  width: 100%;
+  line-height: 16px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+#form_output {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
   
+#results {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.attribute_title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.form-att {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sentence-list-contiainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sentence-list-item {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    padding: 10px 20px;
+    margin-bottom: 5px;    
+}

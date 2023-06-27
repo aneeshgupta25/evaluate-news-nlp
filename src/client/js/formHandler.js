@@ -1,19 +1,18 @@
 function handleSubmit(event) {
     event.preventDefault()
-
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value    
-    Client.checkForName(formText)
-
-    console.log("::: Form Submitted :::")    
     
-    //fetch nlp data    
-    fetch(`http://localhost:3000/test?t=${"hello"}&l=${"en"}`)    
-    .then(res => res.json())
-    .then(function(res) {
-        console.log(res);
-        document.getElementById('results').innerHTML = res.subjectivity
-    })
+    let formText = document.getElementById('name').value        
+    console.log("::: Form Submitted :::")
+    if(formText.length == 0) alert('Kindly Enter Some Text')
+    
+    //fetch nlp data
+    if(formText.length != 0) {
+        fetch(`http://localhost:3000/test?t=${formText}&l=${"en"}`)    
+        .then(res => res.json())
+        .then(function(res) {        
+            Client.updateViewFromResponse(res)
+        })
+    }
 }
 
 export { handleSubmit }

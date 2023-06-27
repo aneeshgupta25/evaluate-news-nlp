@@ -46,5 +46,6 @@ const getData = async (data) => {
     }
     catch(e) {
         console.log("Error Occurred while Fetching NLP data...");
+        alert('Something went wrong!')
     }
 }

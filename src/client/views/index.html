@@ -10,31 +10,55 @@
     <body>
 
         <header>
-            <div class="">
+            <h2>A Web tool with which you can run Natural Language Processing (NLP) on articles or blogs found on other websites.</h2>
+            <h3>NLP is the ability of an application to understand the human language, written or oral.</h3>
+            <!-- <div class="">
                 Logo
             </div>
             <div class="">
                 navigation
-            </div>
+            </div> -->
         </header>
 
-        <main>
+        <main>            
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Your Text goes here..">
+                    <input type="submit" name="" value="SUBMIT" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
-
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+            <section id="form_output">
+                <strong class="attribute_title">Form Results:</strong>
+                <div id="results">
+                    <div class="irony form-att">
+                        <p class="attribute">Irony: </p>
+                        <p class="value"></p>
+                    </div>
+                    <div class="polarity form-att">
+                        <p class="attribute">Polarity of the element: </p>
+                        <p class="value"></p>
+                    </div>
+                    <div class="subjectivity form-att">
+                        <p class="attribute">Subjectivity: </p>
+                        <p class="value"></p>
+                    </div>
+                    <div class="confidence form-att">
+                        <p class="attribute">Confidence: </p>
+                        <p class="value"></p>
+                    </div>
+                    <p class="attribute_title">List of sentences in which the text is divided: </p>
+                    <div class="sentence-list form-att">
+                        
+                    </div>
+                </div>
             </section>
         </main>
-
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
+        <script>        
+            if ('serviceWorker' in navigator) {                
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>
