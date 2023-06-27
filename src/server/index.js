@@ -11,14 +11,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
-
 app.use(express.static('dist'))
 
 console.log(__dirname)
 
 app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
-    // res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile('dist/index.html')    
 })
 
 // designates what port the app will listen to for incoming requests
@@ -27,15 +25,19 @@ app.listen(3000, function () {
 })
 
 app.get('/test', function (req, res) {
-    getData({
-        text: req.query.t,
-        language: req.query.l
-    })
-    .then(
-        function(data) {                        
-            res.send(data);
-        }
-    )    
+    try {
+            getData({
+            text: req.query.t,
+            language: req.query.l
+        })
+        .then(
+            function(data) {                        
+                res.send(data);
+            }
+        )   
+    } catch(e) {
+        alert("Something went wrong!!")
+    }
 })
 
 const getData = async (data) => {    

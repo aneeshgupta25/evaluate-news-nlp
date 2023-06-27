@@ -1,17 +1,17 @@
+$color_1: white;
+$background-color_1: #0d2e34;
+
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #0d2e34;
-    color: white;
-  }
-  
-  main {
-    flex: 2;
-  }
-  
-  section {
-    max-width: 800px;
-    margin: 50px auto;
-  }
-  
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: $background-color_1;
+	color: $color_1;
+}
+main {
+	flex: 2;
+}
+section {
+	max-width: 800px;
+	margin: 50px auto;
+}

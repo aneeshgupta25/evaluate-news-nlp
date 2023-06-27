@@ -6,12 +6,16 @@ function handleSubmit(event) {
     if(formText.length == 0) alert('Kindly Enter Some Text')
     
     //fetch nlp data
-    if(formText.length != 0) {
-        fetch(`http://localhost:3000/test?t=${formText}&l=${"en"}`)    
-        .then(res => res.json())
-        .then(function(res) {        
-            Client.updateViewFromResponse(res)
-        })
+    try {
+        if(formText.length != 0) {
+            fetch(`http://localhost:3000/test?t=${formText}&l=${"en"}`)    
+            .then(res => res.json())
+            .then(function(res) {        
+                Client.updateViewFromResponse(res)
+            })
+        }
+    } catch(e) {
+        alert("Something Went Wrong!!")
     }
 }
 
